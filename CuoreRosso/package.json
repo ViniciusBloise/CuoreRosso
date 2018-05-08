@@ -4,9 +4,15 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "materialize-css": "^0.100.2"
+    "jquery": "^3.3.1",
+    "materialize-css": "^1.0.0-rc.1"
   },
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cli": "^2.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-uglify": "^3.0.0",
     "webpack": "^4.1.1"
   },
   "scripts": {

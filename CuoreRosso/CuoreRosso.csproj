@@ -305,5 +305,9 @@
     <None Include="node_modules\materialize-css\package.json" />
     <None Include="node_modules\materialize-css\README.md" />
     <None Include="node_modules\.DS_Store" />
+    <None Include="wwwroot\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\index.html" />
   </ItemGroup>
 </Project>
