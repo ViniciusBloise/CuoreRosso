@@ -41,3 +41,7 @@ Thumbs.db
 *.dotCover
 
 node_modules/
+wwwroot/css/
+wwwroot/js/
+Content/*.min.css
+Content/*.min.js

@@ -10,46 +10,50 @@
     width: 300px;
 }
 
- .watermark {
-  width: 300px;
-  height: 100px;
-  display: block;
-  position: relative;
+.watermark {
+    width: 300px;
+    height: 100px;
+    display: block;
+    position: relative;
 }
 
-.watermark::after {
-  content: "";
-  background:url(https://www.google.co.in/images/srpr/logo11w.png);
-  opacity: 0.2;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;   
-}
+    .watermark::after {
+        content: "";
+        background: url(https://www.google.co.in/images/srpr/logo11w.png);
+        opacity: 0.2;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+    }
 
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background:#DDD; padding:2em;
+    background: #DDD;
+    /*padding: 2em 2em 0 2em;*/
 }
 
 main {
     flex: 1 0 auto;
 }
 
-body::after {
-  top: 0; bottom: 0; left: 0; right: 0;
-  background: url(/images/2144.jpg);
-  background-color:#BADA55;
-  opacity: 0.8;
-  position: fixed;
-  z-index: -1; 
-  content: "";
-}
+    body::after {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: url(/images/bkg-trianglify20180509.png);
+        background-color: #BADA55;
+        opacity: 0.8;
+        position: fixed;
+        z-index: -1;
+        content: "";
+    }
 
 .credits {
-  font-size:xx-small;
+    font-size: xx-small;
 }
