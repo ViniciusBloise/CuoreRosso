@@ -1,13 +1,12 @@
 .box {
     background: transparent;
     border-radius: 0;
-    color: #fff;
     left: 50%;
     margin: -200px 0 0 -124px;
     padding: 0;
     position: absolute;
     top: 50%;
-    width: 300px;
+    width: 350px;
 }
 
 .watermark {
