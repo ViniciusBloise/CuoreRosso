@@ -92,3 +92,4 @@ gulp.task("copy-content", function() {
     .pipe(gulp.dest(paths.webroot + "css/"))
 })
 
+gulp.task("pre-build", ["copy-content"]);

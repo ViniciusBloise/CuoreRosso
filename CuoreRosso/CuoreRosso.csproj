@@ -4,6 +4,17 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <CustomCommands>
+      <CustomCommands>
+        <Command>
+          <type>BeforeBuild</type>
+          <command>gulp pre-build</command>
+          <workingdir>${ProjectDir}</workingdir>
+        </Command>
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
   </ItemGroup>
@@ -131,18 +142,10 @@
   <ItemGroup>
     <None Include="wwwroot\index.html" />
     <None Include="wwwroot\login.html" />
-    <None Include="wwwroot\css\login.css" />
-    <None Include="wwwroot\css\login.min.css" />
-    <None Include="wwwroot\css\site.css" />
-    <None Include="wwwroot\css\site.min.css" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\index.html" />
     <Content Remove="wwwroot\login.html" />
-    <Content Remove="wwwroot\css\login.css" />
-    <Content Remove="wwwroot\css\login.min.css" />
-    <Content Remove="wwwroot\css\site.css" />
-    <Content Remove="wwwroot\css\site.min.css" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
