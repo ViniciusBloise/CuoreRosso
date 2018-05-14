@@ -16,17 +16,17 @@
     position: relative;
 }
 
-    .watermark::after {
-        content: "";
-        background: url(https://www.google.co.in/images/srpr/logo11w.png);
-        opacity: 0.2;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        position: absolute;
-        z-index: -1;
-    }
+.watermark::after {
+    content: "";
+    background: url(https://www.google.co.in/images/srpr/logo11w.png);
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
 
 body {
     display: flex;
@@ -55,4 +55,8 @@ main {
 
 .credits {
     font-size: xx-small;
+}
+
+.page-footer .footer-copyright {
+    padding: 1em !important;
 }

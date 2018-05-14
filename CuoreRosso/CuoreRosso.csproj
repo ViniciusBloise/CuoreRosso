@@ -142,13 +142,18 @@
   <ItemGroup>
     <None Include="wwwroot\index.html" />
     <None Include="wwwroot\login.html" />
+    <None Include="wwwroot\images\Cuore Rosso.png" />
+    <None Include="wwwroot\images\CuoreRosso-transp.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\index.html" />
     <Content Remove="wwwroot\login.html" />
+    <Content Remove="wwwroot\images\Cuore Rosso.png" />
+    <Content Remove="wwwroot\images\CuoreRosso-transp.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
     <Folder Include="Content\js\" />
+    <Folder Include="Views\Account\" />
   </ItemGroup>
 </Project>

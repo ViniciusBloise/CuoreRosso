@@ -1720,6 +1720,10 @@ isobject@^3.0.0, isobject@^3.0.1:
   version "3.0.1"
   resolved "https://clienteuno.pkgs.visualstudio.com/_packaging/Test_feed/npm/registry/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
 
+jquery@^3.3.1:
+  version "3.3.1"
+  resolved "https://clienteuno.pkgs.visualstudio.com/_packaging/Test_feed/npm/registry/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
+
 json-schema-traverse@^0.3.0:
   version "0.3.1"
   resolved "https://clienteuno.pkgs.visualstudio.com/_packaging/Test_feed/npm/registry/json-schema-traverse/-/json-schema-traverse-0.3.1.tgz#349a6d44c53a51de89b40805c5d5e59b417d3340"
