@@ -138,18 +138,28 @@
     <None Remove="node_modules\jquery\LICENSE.txt" />
     <None Remove="node_modules\jquery\package.json" />
     <None Remove="node_modules\jquery\README.md" />
+    <None Remove="login.css" />
+    <None Remove="login.min.css" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\index.html" />
     <None Include="wwwroot\login.html" />
     <None Include="wwwroot\images\Cuore Rosso.png" />
     <None Include="wwwroot\images\CuoreRosso-transp.png" />
+    <None Include="wwwroot\css\login.css" />
+    <None Include="wwwroot\css\login.min.css" />
+    <None Include="wwwroot\css\site.css" />
+    <None Include="wwwroot\css\site.min.css" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\index.html" />
     <Content Remove="wwwroot\login.html" />
     <Content Remove="wwwroot\images\Cuore Rosso.png" />
     <Content Remove="wwwroot\images\CuoreRosso-transp.png" />
+    <Content Remove="wwwroot\css\login.css" />
+    <Content Remove="wwwroot\css\login.min.css" />
+    <Content Remove="wwwroot\css\site.css" />
+    <Content Remove="wwwroot\css\site.min.css" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />

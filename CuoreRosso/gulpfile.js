@@ -88,7 +88,6 @@ gulp.task("copy-content", function() {
     .pipe(gulp.dest(paths.webroot + "css/"))
     .pipe(cssmin())
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest("."))
     .pipe(gulp.dest(paths.webroot + "css/"))
 })
 

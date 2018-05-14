@@ -6,17 +6,21 @@
 }
 <style type="text/css">
     span.helper-text {
-        color: grey;
+        color: amber lighten-5;
     }
-    .card-content .row .col .col{
+
+    .card-content .row .col .col {
         padding-left: 0;
     }
-    .card-content .row .col .col label {
-        left: 0;
-    }
+
+        .card-content .row .col .col label {
+            left: 0;
+        }
+
     .cuore {
-        background-color: whitesmoke;
+        background-color: amber;
     }
+
     .row {
         margin-bottom: auto;
     }
@@ -27,56 +31,58 @@
         <div class="row">
             <div class="col s12 m9 push-m1">
                 <form method="post">
-                    <div class="card blue-grey lighten-3">
-                        <div class="card-content white-text">
-                            <div class="card-title cuore"><img src="images/CuoreRosso-transp.png" width="40%" /></div>
-                            <div class="card-title">Crie sua conta CuoreRosso</div>
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <i class="material-icons prefix">textsms</i>
-                                    <input type="text" id="firstName" class="autocomplete">
-                                    <label for="firstName">Nome</label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <input type="text" id="lastName" class="autocomplete">
-                                    <label for="lastName">Sobrenome</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input type="text" id="email" class="autocomplete" />
-                                    <label for="email">E-mail</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col s11">
+                    <div class="valign-wrapper">
+                        <div class="card amber lighten-5">
+                            <div class="card-content black-text">
+                                <div class="card-title cuore"><img src="images/CuoreRosso-transp.png" width="40%" /></div>
+                                <div class="card-title">Crie sua conta CuoreRosso</div>
+                                <div class="row">
                                     <div class="input-field col s6">
-                                        <input type="text" id="password" class="autocomplete" />
-                                        <label for="password">Senha</label>
+                                        <i class="material-icons prefix">textsms</i>
+                                        <input type="text" id="firstName" class="autocomplete">
+                                        <label for="firstName">Nome</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <input type="text" id="lastName" class="autocomplete">
+                                        <label for="lastName">Sobrenome</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input type="text" id="email" class="autocomplete" />
+                                        <label for="email">E-mail</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s11">
+                                        <div class="input-field col s6">
+                                            <input type="text" id="password" class="autocomplete" />
+                                            <label for="password">Senha</label>
 
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input type="text" id="passwordConfirm" class="autocomplete" />
+                                            <label for="passwordConfirm">Confirmar senha</label>
+                                        </div>
+                                        <span class="helper-text" data-error="wrong" data-success="right">A senha deve ter mais de 8 caracteres com pelo menos 1 letra maiúscula, 1 letra minúscula e 1 número</span>
                                     </div>
-                                    <div class="input-field col s6">
-                                        <input type="text" id="passwordConfirm" class="autocomplete" />
-                                        <label for="passwordConfirm">Confirmar senha</label>
+                                    <div class="input-field col s1">
+                                        <i class="material-icons">
+                                            visibility
+                                        </i>
                                     </div>
-                                    <span class="helper-text" data-error="wrong" data-success="right">A senha deve ter mais de 8 caracteres com pelo menos 1 letra maiúscula, 1 letra minúscula e 1 número</span>
                                 </div>
-                                <div class="input-field col s1">
-                                    <i class="material-icons">
-                                        visibility
-                                    </i>
+                                <div class="row">
+                                    <button class="btn waves-effect waves-light col push-s8" type="submit" name="action">
+                                        Próxima
+                                        <i class="material-icons right">send</i>
+                                    </button>
                                 </div>
                             </div>
-                            <div class="row">
-                                <button class="btn waves-effect waves-light col push-s8" type="submit" name="action">
-                                    Próxima
-                                    <i class="material-icons right">send</i>
-                                </button>
+                            <div class="card-action">
+                                <a href="#">This is a link</a>
+                                <a href="#">This is a link</a>
                             </div>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
-                            <a href="#">This is a link</a>
                         </div>
                     </div>
                 </form>
