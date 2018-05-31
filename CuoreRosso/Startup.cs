@@ -13,6 +13,10 @@ using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 using System.Threading;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Mvc.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.Extensions.Localization;
+using Microsoft.Extensions.Options;
 
 namespace CuoreRosso
 {
@@ -39,21 +43,22 @@ namespace CuoreRosso
             {
                 var supportedCultures = new[]
                 {
-                   new CultureInfo("pt"),
+                    new CultureInfo(baseCulture),
                     new CultureInfo(enUSCulture)
-
                  };
 
-                options.DefaultRequestCulture = new RequestCulture(culture: enUSCulture, uiCulture: enUSCulture);
+                options.DefaultRequestCulture = new RequestCulture(culture: baseCulture, uiCulture: baseCulture);
                 options.SupportedCultures = supportedCultures;
                 options.SupportedUICultures = supportedCultures;
 
                 options.RequestCultureProviders.Insert(0, new CustomRequestCultureProvider(async context =>
                 {
                     // My custom request culture logic
-                    return new ProviderCultureResult("pt");
+                    return new ProviderCultureResult(baseCulture);
                 }));
             });
+            services.AddSingleton<Microsoft.AspNetCore.Mvc.DataAnnotations.IValidationAttributeAdapterProvider, LocalizedValidationAttributeAdapterProvider>();
+
             services.AddMvc()
                 .AddRazorPagesOptions(options =>
                 {
@@ -72,8 +77,7 @@ namespace CuoreRosso
         }
 
         private const string enUSCulture = "en-US";
-
-
+        private const string baseCulture = "pt-BR";
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -96,14 +100,16 @@ namespace CuoreRosso
 
             app.UseRequestLocalization(new RequestLocalizationOptions
             {
-                DefaultRequestCulture = new RequestCulture("pt-BR"),
+                DefaultRequestCulture = new RequestCulture(supportedCultures[2]), //"pt-BR"),
                 // Formatting numbers, dates, etc.
                 SupportedCultures = supportedCultures,
                 // UI strings that we have localized.
                 SupportedUICultures = supportedCultures
             });
 
+            var locOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
 
+            app.UseRequestLocalization(locOptions.Value);
             app.UseStaticFiles();
             // To configure external authentication, 
             // see: http://go.microsoft.com/fwlink/?LinkID=532715
@@ -111,13 +117,24 @@ namespace CuoreRosso
             app.UseMvcWithDefaultRoute();
 
             app.UseStaticFiles();
-
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+
+        public class LocalizedValidationAttributeAdapterProvider : IValidationAttributeAdapterProvider
+        {
+            private readonly ValidationAttributeAdapterProvider _originalProvider = new ValidationAttributeAdapterProvider();
+
+            public IAttributeAdapter GetAttributeAdapter(ValidationAttribute attribute, IStringLocalizer stringLocalizer)
+            {
+                attribute.ErrorMessage = attribute.FormatErrorMessage("{0}");
+
+                return _originalProvider.GetAttributeAdapter(attribute, stringLocalizer);
+            }
         }
     }
 }

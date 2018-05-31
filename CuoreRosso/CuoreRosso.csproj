@@ -150,6 +150,7 @@
     <None Include="wwwroot\css\login.min.css" />
     <None Include="wwwroot\css\site.css" />
     <None Include="wwwroot\css\site.min.css" />
+    <None Include="Resources\Strings.pt-BR.resx" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\index.html" />
@@ -165,5 +166,9 @@
     <Folder Include="Content\" />
     <Folder Include="Content\js\" />
     <Folder Include="Views\Account\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Resources\Strings.pt-BR.resx" />
   </ItemGroup>
 </Project>
