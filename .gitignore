@@ -40,7 +40,7 @@ Thumbs.db
 # dotCover
 *.dotCover
 
-node_modules/
+**/node_modules/
 **/wwwroot/css/
 **/wwwroot/js/
 **/wwwroot/themes/
