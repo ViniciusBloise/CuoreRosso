@@ -41,9 +41,9 @@ Thumbs.db
 *.dotCover
 
 node_modules/
-wwwroot/css/
-wwwroot/js/
-Wwwroot/themes/
+**/wwwroot/css/
+**/wwwroot/js/
+**/wwwroot/themes/
 Content/*.min.css
 Content/*.min.js
 ViniciusBloise
