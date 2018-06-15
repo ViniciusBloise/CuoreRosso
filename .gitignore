@@ -43,5 +43,7 @@ Thumbs.db
 node_modules/
 wwwroot/css/
 wwwroot/js/
+Wwwroot/themes/
 Content/*.min.css
 Content/*.min.js
+ViniciusBloise
