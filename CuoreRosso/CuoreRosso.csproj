@@ -167,6 +167,8 @@
     <Folder Include="Content\js\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Resources\" />
+    <Folder Include="Views\Sprilux\" />
+    <Folder Include="Filters\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Resources\Strings.pt-BR.resx" />

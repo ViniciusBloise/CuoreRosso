@@ -6,7 +6,9 @@ var gulp = require("gulp"),
   concat = require("gulp-concat"),
   cssmin = require("gulp-cssmin"),
   uglify = require("gulp-uglify"),
+  gutil  = require("gulp-util"),
   rename = require("gulp-rename");
+
 
 var paths = {
   webroot: "./wwwroot/",
@@ -21,19 +23,28 @@ paths.minCss = paths.webroot + "css/**/*.min.css";
 paths.concatJsDest = paths.webroot + "js/site.min.js";
 paths.concatCssDest = paths.webroot + "css/site.min.css";
 
+
 var module_path = {
   node_modules: "./node_modules/",
   themes: "./Themes/Default/",
   materialize: {},
   plugins_path: "plugins/",
   plugins: ["jquery/dist/**/*.js"],
-  content: "./Content/"
+  content: "./Content/",
+  themes_metronic: "./Themes/layouts/layout/",
+  themes_global: "./Themes/global/"
 };
 
 module_path.materialize.base = module_path.node_modules + "materialize-css/";
 module_path.materialize.js = module_path.materialize.base + "dist/**/*.js";
 module_path.materialize.css = module_path.materialize.base + "dist/**/*.css";
 
+var module_theme = {
+    "css" : module_path.themes_metronic + "css/{themes/,}*.css",
+    "img" : module_path.themes_metronic + "img/*.{jpg,png,gif}",
+    "js"  : module_path.themes_metronic + "scripts/*.js",
+    "dest" : paths.webroot + "themes/alfa/"
+}
 
 function appendToArray(fixed, array)
 {
@@ -76,6 +87,19 @@ gulp.task("copy-theme", function() {
   return gulp.src([module_path.materialize.js, module_path.materialize.css])
     .pipe(gulp.dest(module_path.themes))
     .pipe(gulp.dest(paths.webroot + paths.theme));
+});
+
+//, module_theme.js, module_theme.img
+gulp.task("copy-theme-metro", function() {
+    gutil.log('== Source = ' + module_theme.css);
+    gulp.src(module_theme.css)
+    .pipe(gulp.dest(module_theme.dest + "css"));
+    gulp.src(module_theme.img)
+    .pipe(gulp.dest(module_theme.dest + "img"));
+    gulp.src(module_theme.js)
+    .pipe(gulp.dest(module_theme.dest + "js"));
+    gulp.src(module_path.themes_global + "css/*.css")
+    .pipe(gulp.dest(paths.webroot + "themes/global/css/"));
 });
 
 gulp.task("copy-plugins", function() {

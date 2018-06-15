@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuoreRosso", "CuoreRosso\CuoreRosso.csproj", "{C65B54A7-6F39-4ADA-8F15-23DEB82EC113}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuoreRosso.Dal", "CuoreRosso.Dal\CuoreRosso.Dal.csproj", "{89F2B834-AB47-4A06-88EE-C91E148E36FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuoreRosso-CLI", "CuoreRosso-CLI\CuoreRosso-CLI.csproj", "{A11B9598-64E7-401A-B599-121FBFECF051}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +17,13 @@ Global
 		{C65B54A7-6F39-4ADA-8F15-23DEB82EC113}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C65B54A7-6F39-4ADA-8F15-23DEB82EC113}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C65B54A7-6F39-4ADA-8F15-23DEB82EC113}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89F2B834-AB47-4A06-88EE-C91E148E36FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89F2B834-AB47-4A06-88EE-C91E148E36FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89F2B834-AB47-4A06-88EE-C91E148E36FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89F2B834-AB47-4A06-88EE-C91E148E36FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A11B9598-64E7-401A-B599-121FBFECF051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A11B9598-64E7-401A-B599-121FBFECF051}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A11B9598-64E7-401A-B599-121FBFECF051}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A11B9598-64E7-401A-B599-121FBFECF051}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

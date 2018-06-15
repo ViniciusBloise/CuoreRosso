@@ -116,7 +116,6 @@ namespace CuoreRosso
             app.UseAuthentication();
             app.UseMvcWithDefaultRoute();
 
-            app.UseStaticFiles();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
