@@ -29,7 +29,7 @@ var module_path = {
   themes: "./Themes/Default/",
   materialize: {},
   plugins_path: "plugins/",
-  plugins: ["jquery/dist/**/*.js"],
+  plugins: ["jquery/dist/**/*.js","tooltip/dist/**/*.js"],
   content: "./Content/",
   themes_metronic: "./Themes/layouts/layout/",
   themes_global: "./Themes/global/"
@@ -38,6 +38,8 @@ var module_path = {
 module_path.materialize.base = module_path.node_modules + "materialize-css/";
 module_path.materialize.js = module_path.materialize.base + "dist/**/*.js";
 module_path.materialize.css = module_path.materialize.base + "dist/**/*.css";
+module_path.themes_plugin = module_path.themes_global + "plugins/";
+
 
 var module_theme = {
     "css" : module_path.themes_metronic + "css/{themes/,}*.css",
@@ -89,7 +91,7 @@ gulp.task("copy-theme", function() {
     .pipe(gulp.dest(paths.webroot + paths.theme));
 });
 
-//, module_theme.js, module_theme.img
+/*, module_theme.js, module_theme.img*/
 gulp.task("copy-theme-metro", function() {
     gutil.log('== Source = ' + module_theme.css);
     gulp.src(module_theme.css)
@@ -98,11 +100,18 @@ gulp.task("copy-theme-metro", function() {
     .pipe(gulp.dest(module_theme.dest + "img"));
     gulp.src(module_theme.js)
     .pipe(gulp.dest(module_theme.dest + "js"));
-    gulp.src(module_path.themes_global + "css/*.css")
+    gulp.src(module_path.themes_global + "css//*.css")
     .pipe(gulp.dest(paths.webroot + "themes/global/css/"));
+    gulp.src(module_path.themes_global + "scripts//*.js")
+    .pipe(gulp.dest(paths.webroot + "themes/global/js/"));
+    gutil.log('== Source = ' + module_path.themes_plugin);
+    gulp.src(module_path.themes_plugin + "bootstrap//**")
+    .pipe(gulp.dest(paths.webroot + "themes/global/plugins/bootstrap"));
 });
 
 gulp.task("copy-plugins", function() {
+    gulp.src(appendToArray(module_path.themes_plugin, [ "bootstrap/js//*.js"]))
+    .pipe(gulp.dest(paths.webroot + "themes/global/plugins/"));
   return gulp.src(appendToArray(module_path.node_modules, module_path.plugins))
     .pipe(gulp.dest(paths.webroot + module_path.plugins_path));
 })
